@@ -1,0 +1,13 @@
+<h1 class="text-center mb-5">Wikinimous</h1>
+<p class="text-center mb-5"><%= link_to "Add new article", new_article_path %></p>
+<div class="d-flex align-items-center container">
+<ul>
+  <% @articles.each do |article| %>
+    <li class="h4"class="p-2">
+      <%= link_to article.title, article_path(article) %>
+      <p class="h6"><%=article.content[0..100]%></p>
+    </li>
+
+  <% end %>
+</ul>
+</div>
